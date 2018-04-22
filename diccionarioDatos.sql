@@ -1,7 +1,7 @@
 --//SQL Database documentation script
 --//Author: Nitin Patel, Email: nitinpatel31@gmail.com
 --//Modify: Aldo Vilardy, Email: aldovilardy@gmail.com
---//Date:18-Feb-2008, 15/07/2015
+--//Date:18-Feb-2008, 15-07-2015
 --//Description: T-SQL script to generate the database document for SQL server 2000/2005
 Declare @i Int, @maxi Int
 Declare @j Int, @maxj Int
@@ -86,7 +86,7 @@ Set @maxi = @@rowcount
 set @i = 1
 
 print '<table border="0" cellspacing="0" cellpadding="0" width="550px" align="center"><tr><td colspan="3" style="height:50;font-size:14pt;text-align:center;"><a name="index"></a><b>Indice</b></td></tr></table>'
-print '<table border="0" cellspacing="1" cellpadding="0" width="550px" align="center"><tr><th>Posici髇</th><th>Objeto</th><th>Tipo</th></tr>' 
+print '<table border="0" cellspacing="1" cellpadding="0" width="550px" align="center"><tr><th>Posici贸n</th><th>Objeto</th><th>Tipo</th></tr>' 
 While(@i <= @maxi)
 begin
 	select @Output =  '<tr><td align="center">' + Cast((@i) as varchar) + '</td><td><a href="#' + Type + ':' + name + '">' + name + '</a></td><td>' + Type + '</td></tr>' 
@@ -107,7 +107,7 @@ begin
 	print '<br /><br /><br /><table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td align="right"><a href="#index">Indice</a></td></tr>'
 	print @Output
 	print '</table><br />'
-	print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Descripci髇</b></td></tr><tr><td>' + isnull(@description, '') + '</td></tr></table><br />' 
+	print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Descripci贸n</b></td></tr><tr><td>' + isnull(@description, '') + '</td></tr></table><br />' 
 
 	--table columns
 	truncate table #Columns 
@@ -157,7 +157,7 @@ begin
 	set @j = 1
 
 	print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Columnas</b></td></tr></table>' 
-	print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇</th><th>Nombre</th><th>Tipo de Dato</th><th>Nullable</th><th>Descripci髇</th></tr>' 
+	print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n</th><th>Nombre</th><th>Tipo de Dato</th><th>Nullable</th><th>Descripci贸n</th></tr>' 
 	
 	While(@j <= @maxj)
 	begin
@@ -203,7 +203,7 @@ begin
 	begin
 
 		print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Refrence Keys</b></td></tr></table>' 
-		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇</th><th>Nombre</th><th>Columna</th><th>Referencia a</th></tr>' 
+		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n</th><th>Nombre</th><th>Columna</th><th>Referencia a</th></tr>' 
 
 		While(@j <= @maxj)
 		begin
@@ -253,7 +253,7 @@ begin
 	begin
 
 		print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Constraints por defecto</b></td></tr></table>' 
-		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇</th><th>Nombre</th><th>Columna</th><th>Valor</th></tr>' 
+		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n</th><th>Nombre</th><th>Columna</th><th>Valor</th></tr>' 
 
 		While(@j <= @maxj)
 		begin
@@ -313,7 +313,7 @@ begin
 	begin
 
 		print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Check  Constraints</b></td></tr></table>' 
-		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇</th><th>Name</th><th>Columna</th><th>Definicion</th></tr>' 
+		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n</th><th>Name</th><th>Columna</th><th>Definicion</th></tr>' 
 
 		While(@j <= @maxj)
 		begin
@@ -355,7 +355,7 @@ begin
 	begin
 
 		print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Triggers</b></td></tr></table>' 
-		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇</th><th>Nombre</th><th>Descripci髇</th></tr>' 
+		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n</th><th>Nombre</th><th>Descripci贸n</th></tr>' 
 
 		While(@j <= @maxj)
 		begin
@@ -400,7 +400,7 @@ begin
 	begin
 
 		print '<table border="0" cellspacing="0" cellpadding="0" width="750px"><tr><td><b>Indices</b></td></tr></table>' 
-		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici髇.</th><th>Nombre</th><th>Tipo</th><th>Columnas</th></tr>' 
+		print '<table border="0" cellspacing="1" cellpadding="0" width="750px"><tr><th>Posici贸n.</th><th>Nombre</th><th>Tipo</th><th>Columnas</th></tr>' 
 		set @Output = ''
 		set @last = ''
 		set @current = ''
