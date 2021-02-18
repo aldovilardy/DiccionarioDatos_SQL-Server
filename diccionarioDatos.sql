@@ -1,6 +1,5 @@
 --//SQL Database documentation script
---//Author: Nitin Patel, Email: nitinpatel31@gmail.com
---//Modify: Aldo Vilardy, Email: aldovilardy@gmail.com
+--//By: Aldo Vilardy, Email: aldovilardy@gmail.com
 --//Date:18-Feb-2008, 15-07-2015
 --//Description: T-SQL script to generate the database document for SQL server 2000/2005
 Declare @i Int, @maxi Int
